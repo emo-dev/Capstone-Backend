@@ -29,7 +29,8 @@ Install Django and REST framework:
 pip install django
 ```
 
-Install Pillow:
+Install widget-tweaks:
+See [this repo](https://github.com/kmike/django-widget-tweaks) for more info
 ```
 pip install django-widget-tweaks
 ```
