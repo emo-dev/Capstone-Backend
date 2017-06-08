@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load staticfiles %}      
+
+<div class="container">
+  <div class="jumbotron">      
+    <legend>Login</legend>
+    <form id="login_form" method="post" action="{% url 'todo:login_user' %}">
+    {% csrf_token %}
+      <p>Username: <input type="text" name="username" value="" size="50" />
+      <br /></p>
+      <p>Password: <input type="password" name="password" value="" size="50" />
+      <br /></p>
+
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-1">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+        </div>
+        <div class="col-xs-4 col-xs-offset-1 pull-right">
+          <h3>Not a User?? <a href="{% url 'todo:register' %}">Register!</a></h3>
+        </div>
+      </div>     
+    </form>          
+  </div>        
+</div>
+
+{% endblock %}

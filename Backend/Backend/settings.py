@@ -25,12 +25,14 @@ SECRET_KEY = '&%kuj-7kcgovasy#zx^b1*7t^53!e^)!wdt=bfsgyej)%i3x$u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
+    'todo.apps.TodoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

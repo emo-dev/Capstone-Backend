@@ -1,0 +1,32 @@
+  {% extends 'index.html' %}
+  {% block content %}
+  {% load staticfiles %}        
+
+    {% if registered %}
+    <strong>WOW! YOU'RE REGISTERED</strong>
+    <a href="{% url 'todo:home' %}">Return to the homepage.</a><br />
+    {% else %}
+    
+    <div class="container">
+        <div class="jumbotron">      
+            <legend>Register</legend>
+            <form method="post" action="{% url 'todo:register' %}"
+                    enctype="multipart/form-data">
+
+                {% csrf_token %}            
+                {{ user_form.as_p }}       
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-1">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                    </div>
+                    <div class="col-xs-4 col-xs-offset-1 pull-right">
+                        <h3>Already a user?? <a href="{% url 'todo:login_user' %}">Log in!</a></h3>
+                    </div>
+                </div>     
+            </form>
+        </div>        
+    </div>
+        
+
+    {% endif %}
+{% endblock %}
