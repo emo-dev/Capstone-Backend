@@ -1,0 +1,8 @@
+  {% extends 'index.html' %}
+  {% block content %}
+  {% load staticfiles %}
+
+    {% include "navbar.html" %}    
+    <h2>Specific Todo</h2>       
+    <button><a href="{% url 'todo:home' %}">Go Home</a></button>
+{% endblock %}

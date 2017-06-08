@@ -1,0 +1,27 @@
+{% block content %}  
+<div class="container nav-container">
+  <div class="header clearfix">
+    <nav>      
+      <ul class="nav nav-pills pull-right">        
+        <li role="presentation" 
+        {% if request.path == '/home' %}
+          class="nav-location active"
+        {% else %}
+          class="nav-location"
+        {% endif %}><a href="{% url 'todo:home' %}">Home</a></li>
+        <li role="presentation" 
+        {% if request.path == '/create' %}
+          class="nav-location active"
+        {% else %}
+          class="nav-location"
+        {% endif %}><a href="{% url 'todo:create' %}">Create Todo</a></li>
+        <li role="presentation" class="nav-location"><a href="{% url 'todo:register' %}">Register</a></li>
+        <li role="presentation" class="nav-location"><a href="{% url 'todo:logout_user' %}">Logout</a></li>
+      </ul>
+    </nav>
+    <h3 class="text-muted nav-title">Todo: Backend</h3>
+  </div>
+</div>
+
+
+{% endblock %}
